@@ -750,34 +750,34 @@
 
                     <!-- Right Column: Quick Inquiry Form -->
                     <div class="lg:col-span-7">
-                        <form onsubmit="handleFormSubmit(event)" class="glass-panel p-6 sm:p-8 rounded-xl border border-slate-800 space-y-4">
+                        <form action="mailto:ts.chankhungleong@gmail.com" method="post" enctype="text/plain" class="glass-panel p-6 sm:p-8 rounded-xl border border-slate-800 space-y-4">
                             <h4 class="text-xl font-bold text-white mb-2">Send an Inquiry</h4>
                             
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
-                                    <input type="text" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500">
+                                    <input type="text" name="Name" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-lg bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-300 mb-1">Your Email</label>
-                                    <input type="email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-lg bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500">
+                                    <input type="email" name="Email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-lg bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500">
                                 </div>
                             </div>
 
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1">Subject / Area of Interest</label>
-                                <select class="w-full px-4 py-2.5 rounded-lg bg-navy-950/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-500">
-                                    <option>Academic Supervision / Lecturing</option>
-                                    <option>ISO / Quality Consulting & Audits</option>
-                                    <option>Radiation Safety & RPO Advisory</option>
-                                    <option>Industry-Academic Collaboration</option>
-                                    <option>General Inquiry</option>
+                                <select name="Subject" class="w-full px-4 py-2.5 rounded-lg bg-navy-950/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-amber-500">
+                                    <option value="Academic Supervision / Lecturing">Academic Supervision / Lecturing</option>
+                                    <option value="ISO / Quality Consulting & Audits">ISO / Quality Consulting & Audits</option>
+                                    <option value="Radiation Safety & RPO Advisory">Radiation Safety & RPO Advisory</option>
+                                    <option value="Industry-Academic Collaboration">Industry-Academic Collaboration</option>
+                                    <option value="General Inquiry">General Inquiry</option>
                                 </select>
                             </div>
 
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1">Message</label>
-                                <textarea rows="4" required placeholder="Describe your inquiry or project details..." class="w-full px-4 py-2.5 rounded-lg bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500"></textarea>
+                                <textarea name="Message" rows="4" required placeholder="Describe your inquiry or project details..." class="w-full px-4 py-2.5 rounded-lg bg-navy-950/80 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500"></textarea>
                             </div>
 
                             <button type="submit" class="w-full py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold transition-colors flex items-center justify-center gap-2 shadow-lg">
@@ -910,13 +910,6 @@
             setTimeout(() => {
                 toast.classList.add('hidden');
             }, 3000);
-        }
-
-        // Form Submit Handler
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            showToast("Thank you! Your inquiry has been received.");
-            e.target.reset();
         }
 
         // Mobile Menu Toggle
